@@ -1,3 +1,4 @@
+import 'package:calc_nota_alunos/components/card_nota.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,10 +13,13 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text('Calculadora de Notas'),
       ),
-      body: Column(
-        children: [
-          Text('Teste'),
-        ],
+      body: Container(
+        padding: EdgeInsets.all(10),
+        child: ListView(
+          children: [
+            CardNota(),
+          ],
+        ),
       ),
     );
   }
