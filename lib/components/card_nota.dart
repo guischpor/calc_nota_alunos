@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CardNota extends StatelessWidget {
-  final int resultado;
+  final double resultado;
+  final String mensagem;
 
   CardNota({
-    this.resultado = 0,
+    this.resultado,
+    this.mensagem,
   });
 
   @override
@@ -32,6 +34,16 @@ class CardNota extends StatelessWidget {
               '$resultado',
               style: TextStyle(
                 fontSize: 32,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text(
+              '$mensagem',
+              style: TextStyle(
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),
