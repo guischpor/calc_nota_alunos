@@ -15,7 +15,7 @@ class FormFieldNotas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Form(
       child: TextFormField(
         controller: controller,
         keyboardType: keyboardType,
