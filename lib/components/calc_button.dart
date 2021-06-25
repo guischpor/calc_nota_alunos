@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class CalcButton extends StatelessWidget {
+class CalcButton extends StatefulWidget {
   final Color color;
-  final Function onPressed;
+  final void Function() onPressed;
   final String title;
 
   CalcButton({
@@ -12,14 +12,19 @@ class CalcButton extends StatelessWidget {
   });
 
   @override
+  _CalcButtonState createState() => _CalcButtonState();
+}
+
+class _CalcButtonState extends State<CalcButton> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       height: 50,
       child: RaisedButton(
-        color: color,
-        onPressed: onPressed,
+        color: widget.color,
+        onPressed: widget.onPressed,
         child: Text(
-          title,
+          widget.title,
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,

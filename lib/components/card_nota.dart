@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
-class CardNota extends StatelessWidget {
+class CardNota extends StatefulWidget {
   final double resultado;
   final String mensagem;
 
-  CardNota({
+  const CardNota({
     this.resultado,
     this.mensagem,
   });
 
+  @override
+  _CardNotaState createState() => _CardNotaState();
+}
+
+class _CardNotaState extends State<CardNota> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +36,7 @@ class CardNota extends StatelessWidget {
               height: 3,
             ),
             Text(
-              '$resultado',
+              '${widget.resultado}',
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
@@ -41,7 +46,7 @@ class CardNota extends StatelessWidget {
               height: 5,
             ),
             Text(
-              '$mensagem',
+              '${widget.mensagem}',
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
