@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class CardNota extends StatefulWidget {
   final double resultado;
   final String mensagem;
+  final Color colorMessage;
 
   const CardNota({
     this.resultado,
     this.mensagem,
+    this.colorMessage,
   });
 
   @override
@@ -50,6 +52,7 @@ class _CardNotaState extends State<CardNota> {
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
+                color: widget.colorMessage,
               ),
             ),
           ],

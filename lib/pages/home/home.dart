@@ -11,6 +11,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   String msg = '';
   double resposta;
+  bool colorMessage;
 
   final nota1Controller = TextEditingController();
   final nota2Controller = TextEditingController();
@@ -41,12 +42,14 @@ class _HomeScreenState extends State<HomeScreen> {
         print('aprovado: ' + res.toStringAsPrecision(2));
         resposta = res;
         msg = 'Aprovado';
+        colorMessage = true;
       }
 
       if (res < 70.0) {
         print('reprovado: ' + res.toStringAsPrecision(2));
         resposta = res;
         msg = 'Reprovado';
+        colorMessage = false;
       }
     });
   }
@@ -72,6 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ? double.tryParse(resposta.toStringAsPrecision(2))
                   : 0.0,
               mensagem: msg.isEmpty ? '----' : msg,
+              colorMessage: colorMessage != false ? Colors.green : Colors.red,
             ),
             SizedBox(height: 20),
             FormFieldNotas(
